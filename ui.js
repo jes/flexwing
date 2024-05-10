@@ -61,6 +61,6 @@ btn('apply', apply);
 btn('reset', reset);
 btn('addscope', addScope);
 
-addScope();
+//addScope();
 
 reset();

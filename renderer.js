@@ -3,7 +3,7 @@ class Renderer {
     world = null;
     canvasId = null;
 
-    viewHeight = 100.0; // metres
+    viewHeight = 80.0; // metres
 
     ctx = null;
     canvas = null;
