@@ -36,6 +36,22 @@ class Renderer {
         if (trike) {
             let p = trike.getWorldCenter();
             this.ctx.translate(-p.x, -p.y);
+
+            let gx = Math.round(p.x/10)*10;
+            let gy = Math.round(p.y/10)*10;
+            for (let i = -10; i < 10; i++) {
+                this.ctx.beginPath();
+                this.ctx.moveTo(gx+i*10, p.y - 200);
+                this.ctx.lineTo(gx+i*10, p.y + 200);
+                this.ctx.closePath();
+                this.ctx.stroke();
+
+                this.ctx.beginPath();
+                this.ctx.moveTo(p.x-200, gy+i*10);
+                this.ctx.lineTo(p.x+200, gy+i*10);
+                this.ctx.closePath();
+                this.ctx.stroke();
+            }
         }
 
         for (let body = this.world.getBodyList(); body; body = body.getNext()) {

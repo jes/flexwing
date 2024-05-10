@@ -29,8 +29,11 @@
     Airspeed: <span id="airspeed"></span> mph<br>
     Vertical speed: <span id="vsi"></span> ft/min<br>
     Altitude: <span id="altitude"></span> ft<br>
+    Angle of attack: <span id="aoa"></span>&deg;<br>
+    Lift vector: <span id="lift"></span> N<br>
+    Thrust vector: <span id="thrust"></span> N<br>
     <label for="throttle">Throttle:</label> <input type="range" name="throttle" id="throttle" min="0" max="1" step="0.001"><br>
-    <label for="barpressure">Bar pressure:</label> <input type="range" name="barpressure" id="barpressure" min="-0.5" max="0.5" step="0.001"><br>
+    <label for="barpressure">Bar pressure:</label> <input type="range" name="barpressure" id="barpressure" min="-1" max="1" step="0.001"><br>
 </div>
 
 <div id="params">
@@ -78,8 +81,8 @@
 <script src="maths.js"></script>
 <script src="util.js"></script>
 <script src="renderer.js"></script>
-<script src="sim.js"></script>
 <script src="dom.js"></script>
+<script src="sim.js"></script>
 <script src="scope.js"></script>
 <script src="ui.js"></script>
 </body>
