@@ -111,13 +111,13 @@ function step(dt) {
     wing.applyForce(liftVector, wing.getWorldCenter());
 
     // air pressure levels out the wing
-    wing.applyTorque(-aoa/10*airspeed/10);
-    wing.applyTorque(-wing.getAngularVelocity()*10);
+    wing.applyTorque(-aoa/10*airspeed*5);
+    wing.applyTorque(-wing.getAngularVelocity()*250);
 
     world.step(dt);
 
     txt('airspeed', sigfigs(airspeed*2.236, 2)); // 1 m/s = 2.236 mph
-        txt('vsi', sigfigs(vsi*3.281, 2)); // 1 m = 3.281 feet
+    txt('vsi', sigfigs(vsi*196.9, 2)); // 1 m/s = 196.9 feet/min
     txt('altitude', sigfigs(altitude*3.281, 2)); // 1 m = 3.281 feet
     txt('aoa', sigfigs(aoa*180/Math.PI, 2));
 }
