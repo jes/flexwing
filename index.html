@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<title>Flexwing Simulator</title>
+<style type="text/css">
+#display {
+    float: left;
+}
+#params {
+    float: left;
+    display: inline-block;
+    max-width: 600px;
+}
+#params input {
+    width: 50px;
+}
+#params label {
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+<h1>Flexwing Simulator</h1>
+
+<div id="display">
+    <canvas style="border: solid 1px black" id="canvas" width="800" height="600"></canvas><br>
+    Airspeed: <span id="airspeed"></span> mph<br>
+    Vertical speed: <span id="vsi"></span> ft/min<br>
+    Altitude: <span id="altitude"></span> ft<br>
+    <label for="throttle">Throttle:</label> <input type="range" name="throttle" id="throttle" min="0" max="1" step="0.001"><br>
+    <label for="barpressure">Bar pressure:</label> <input type="range" name="barpressure" id="barpressure" min="-0.5" max="0.5" step="0.001"><br>
+</div>
+
+<div id="params">
+    <label></label> <b>Escape wheel</b><br>
+    <label for="teeth">Teeth:</label> <input id="teeth" type="text"><br>
+    <label for="majordiameter">Major diameter:</label> <input id="majordiameter" type="text"> mm<br>
+    <label for="minordiameter">Minor diameter:</label> <input id="minordiameter" type="text"> mm<br>
+    <label for="leadingangle">Leading edge angle:</label> <input id="leadingangle" type="text"> &deg; from radial<br>
+    <label for="trailingangle">Trailing edge angle:</label> <input id="trailingangle" type="text"> &deg; from radial<br>
+
+    <br>
+    <label></label> <b>Anchor</b><br>
+    <label for="toothspan">Tooth span:</label> <input id="toothspan" type="text"><br>
+    <label for="lift">Lift:</label> <input id="lift" type="text"> &deg; of anchor</input><br>
+    <label for="drop">Drop:</label> <input id="drop" type="text"> &deg; of escape wheel</input><br>
+    <label></label> TODO: asymmetrical lift/drop?<br>
+    <label for="locksafety">Lock safety:</label> <input id="locksafety" type="text"> &deg; of anchor</input><br>
+    <label for="sectoroffset">Sector offset:</label> <input id="sectoroffset" type="text"> &deg; around escape wheel (TODO)<br>
+    <label for="anchorpivotoffset">Anchor pivot offset:</label> <input id="anchorpivotoffset" type="text"> mm above theoretical (TODO)<br>
+
+    <br>
+    <label></label> <b>Pendulum</b><br>
+    <label for="bobmass">Bob mass:</label> <input id="bobmass" type="text"> kg<br>
+    <label for="bobdiameter">Bob diameter:</label> <input id="bobdiameter" type="text"> mm<br>
+    <label for="rodlength">Rod length:</label> <input id="rodlength" type="text"> mm<br>
+
+    <br>
+    <label></label> <b>Simulation</b><br>
+    <label for="torque">Drive torque:</label> <input id="torque" type="text"> Nm<br>
+    <label for="friction">Coefficient of friction:</label> <input id="friction" type="text"><br>
+
+    <br>
+    <label></label>
+    <button id="apply">Apply</button>
+    <button id="reset">Reset</button>
+</div>
+
+<div style="clear:both"></div>
+
+<div id="scopes">
+    <button id="addscope">+ Add scope</button><br>
+</div>
+
+<script src="planck.min.js"></script>
+<script src="maths.js"></script>
+<script src="util.js"></script>
+<script src="renderer.js"></script>
+<script src="sim.js"></script>
+<script src="dom.js"></script>
+<script src="scope.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
