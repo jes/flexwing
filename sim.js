@@ -94,6 +94,8 @@ function step(dt) {
     // angle of attack is difference between wing angle and movement angle
     let w = wing.getLinearVelocity();
     let aoa = wing.getAngle() - Math.atan2(w.y, w.x);
+    if (aoa > Math.PI) aoa -= 2*Math.PI;
+    if (aoa < -Math.PI) aoa += 2*Math.PI;
 
     // the total force on the wing depends on the airspeed and angle of attack
     let wingForce = liftForce(airspeed, aoa);
